@@ -1,0 +1,22 @@
+body{
+	background-color: #9370DB ;
+	margin: 0px;
+	padding:0px;
+}
+#wrapper {
+background-color: #FFF;
+width: 80%;
+margin: Opx auto;
+}
+img.banner {
+width: 100%;
+height: 50px;
+}
+
+article.gallery img {
+width: 150px;
+height:150px;
+/*block stacks images*/
+display:block;
+margin:10px;
+}
