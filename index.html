@@ -1,44 +1,73 @@
-
 <!DOCTYPE html>
-<html>
-https://html-preview.github.io/?url=
+<html lang="en">
 <head>
-
-	<meta charset="utf-8">
-	<title> My Dog - Bambi</title>
-	
-	<link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastel Café Jukebox - Mood-Based Song Suggestion</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-
 <body>
+    <div class="container">
+        <header>
+            <h1>Welcome to the Jukebox Café </h1>
+            <p>Your personalized song suggestion based on your mood, to listen to during your coffee break!</p>
+        </header>
+        <main>
+            <section class="mood-selector">
+                <h2>How are you feeling today?</h2>
+                <div class="buttons">
+                    <button onclick="getSong('happy')">😆Happy</button>
+                    <button onclick="getSong('relaxed')">🍵 Relaxed</button>
+                    <button onclick="getSong('melancholic')">🍂 Melancholic</button>
+                    <button onclick="getSong('energetic')">⚡️ Energetic</button>
+                </div>
+            </section>
+            <section class="suggestion">
+                <h2 id="suggestion-title">Your Song Recommendation:</h2>
+                <div id="song-result">
+                    <p>Select a mood to get your song suggestion.</p>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>Enjoy!☕️</p>
+        </footer>
+    </div>
 
-	<div id="wrapper">
-		<header><h1>My Dog - Bambi</h1></header>
-	<nav>
-		<a href=" index. html">Home</a>
-		<a href="gallery. html">Gallery</a>
-		<a href="history. html">History</a>
-	</nav>
-	<hr>
-	<main>
-		<section>
-			<article>
-				<h1><a href="gallery.html">Gallery</a></h1>
-				<img src="Images/Bambieyes.jpg" width="100">
-				<img src="Images/Bambismile.jpg" width="100">
-				<img src="Images/Bambibunny.jpg" width="100">
-				<img src="Images/Bambifall.jpg" width="100">
-				<p>Here is a collection of images that I've captured of Bambi. Some silly moments and some regular photos.</p>
-			</article>
-			<article>
-				<h1><a href="history.html">History</a></h1>
-				<img src="Images/Bambimouth.jpg" width="
-				100">
-				<p>Bambi is 5 years old, she's a mixed breed dog who was adopted on December 2019. She is a medium sized dog with the biggest heart. She's a bit shy with new people but if she likes you she will shower you with kisses and cuddles!</p>
-				</article>
-			</section>
-		</main>
-		<footer>Copyright Briana Cuzo</footer>
-	</div>
+
+
+
+
+
+   <script>
+        function getSong(mood) {
+            const songSuggestions = {
+                happy: {
+                    song: "Still into you-Paramore",
+                    link: "https://youtu.be/OblL026SvD4?si=Jpwh9K06FMlFrnwu" 
+                },
+                relaxed: {
+                    song: "Rain-BTS",
+                    link: "https://youtu.be/Pkbnyj-QDhA?si=s_Fxc7zV3g93GYGn" 
+                },
+                melancholic: {
+                    song: "Champagne Coast-Blood Orange",
+                    link: "https://youtu.be/nO6y1-erVEw?si=JR0uX8Y9cnikhLHS" 
+                },
+                energetic: {
+                    song: "Diva-Beyonce",
+                    link: "https://youtu.be/rNM5HW13_O8?si=LgEibsYAwY2X7pCK" 
+                }
+            };
+
+            const resultDiv = document.getElementById('song-result');
+            const selectedSong = songSuggestions[mood];
+
+            // Update the song suggestion text with a clickable link
+            resultDiv.innerHTML = `
+                <p><strong>Song:</strong> <a href="${selectedSong.link}" target="_blank">${selectedSong.song}</a></p>
+            `;
+        }
+    </script>
 </body>
 </html>
